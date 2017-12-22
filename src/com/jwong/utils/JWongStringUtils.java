@@ -46,7 +46,7 @@ public class JWongStringUtils {
     /**
      * List<String> 转 Set<String>
      *
-     * @param list<String>1
+     * @param list<String>
      * @return Set<String>
      */
     public static Set<String> List2Set(List<String> list) {
