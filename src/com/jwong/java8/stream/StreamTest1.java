@@ -8,17 +8,20 @@ import java.util.List;
 import java.util.stream.Stream;
 
 /**
- * StreamTest class
+ * StreamTest1 class
+ * <p>
+ * 一、 Stream 的三个操作步骤：
+ * <p>
+ * 1. 创建 Stream()
+ * <p>
+ * 2. 中间操作
+ * <p>
+ * 3. 终止操作（终端操作）
  *
  * @author J.Wong
  * @date 2017/12/26
  */
-public class StreamTest {
-
-    @Test
-    public void test2() {
-
-    }
+public class StreamTest1 {
 
     // 创建流
     @Test
