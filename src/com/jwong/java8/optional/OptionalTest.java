@@ -30,7 +30,7 @@ public class OptionalTest {
         // map(Function f)
         Optional<Employee> employeeOptional = Optional.ofNullable(new Employee(222, "jwong222"));
         employeeOptional.map((e) -> {
-            e.setName("jwong222333");
+            e.setName(e.getName() + "333");
             return e;
         });
         System.out.println(employeeOptional.get());
