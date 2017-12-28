@@ -21,7 +21,7 @@ public class LocalDateTimeTest {
         LocalDateTime localDateTime1 = LocalDateTime.now(ZoneId.of("Pacific/Bougainville"));
         System.out.println(localDateTime1);
 
-        System.out.println("---------------------------------------");
+        System.out.println("----------------------------------------");
 
         LocalDateTime localDateTime2 = LocalDateTime.now();
         ZonedDateTime zonedDateTime1 = localDateTime2.atZone(ZoneId.of("Pacific/Bougainville"));
