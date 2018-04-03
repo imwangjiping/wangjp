@@ -4,9 +4,7 @@ package com.jwong.InterviewTest;
  * Created by jwong on 2017/10/24.
  */
 
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
