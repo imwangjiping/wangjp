@@ -21,6 +21,7 @@ public class Test20171222 {
         System.out.println(Level.C.ordinal());
         System.out.println(Level.D.ordinal());
 
+
         System.out.println(Level.A.getRange());
         System.out.println(Level.A.getText());
 
