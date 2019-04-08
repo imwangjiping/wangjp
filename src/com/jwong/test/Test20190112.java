@@ -2,13 +2,11 @@ package com.jwong.test;
 
 import org.junit.Test;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.temporal.WeekFields;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -105,5 +103,79 @@ public class Test20190112 {
     @Test
     public void test7() {
 
+        LocalDateTime localDateTime = LocalDateTime.of(2019, 5, 1, 0, 0);
+
+        System.out.println(getQuarter(localDateTime));
+        System.out.println(localDateTime.getYear());
+        System.out.println(localDateTime.withYear(LocalDateTime.now().getYear()).withMonth(LocalDateTime.now().getMonthValue()).withDayOfMonth(LocalDateTime.now().getDayOfMonth()));
     }
+
+    private int getQuarter(LocalDateTime localDateTime) {
+        int monthValue = localDateTime.getMonthValue();
+        switch (monthValue) {
+            case 3:
+            case 4:
+            case 5:
+                return 1;
+            case 6:
+            case 7:
+            case 8:
+                return 2;
+            case 9:
+            case 10:
+            case 11:
+                return 3;
+            default:
+                return 4;
+        }
+    }
+
+    @Test
+    public void test8() {
+
+        System.out.println(Instant.now());
+        System.out.println(new Date().getTime());
+    }
+
+    @Test
+    public void test9() {
+        String[] split = "   1,     8asd,   s".split(",");
+        for (int i = 0; i < split.length; i++) {
+            split[i] = split[i].trim();
+        }
+        System.out.println(Arrays.toString(split));
+        System.out.println(Arrays.stream(split).collect(Collectors.joining(",")));
+    }
+
+    @Test
+    public void test10() {
+        StringBuffer s = new StringBuffer("   ");
+        System.out.println(s.toString().trim().length());
+    }
+
+    @Test
+    public void test11() {
+        // System.out.println(this.newVersion(""));
+        for (int i = 0; i < 1000; i++) {
+            System.out.println(new Random().nextInt(3) );
+        }
+    }
+
+    public static String newVersion(String version) {
+        version = "V1.99.99";
+        String[] versionSplit = version.substring(1).split("\\.");
+        int a = Integer.parseInt(versionSplit[0]);
+        int b = Integer.parseInt(versionSplit[1]);
+        int c = Integer.parseInt(versionSplit[2]);
+        if (++c > 100) {
+            c = 0;
+            if (++b > 100) {
+                b = 0;
+                return "V" + (++a) + "." + b + "." + c;
+            }
+            return "V" + a + "." + b + "." + c;
+        }
+        return "V" + a + "." + b + "." + c;
+    }
+
 }
