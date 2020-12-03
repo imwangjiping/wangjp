@@ -11,6 +11,7 @@ import org.junit.Test;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Date;
 
 /**
  * TestDownLoadImg class
@@ -152,6 +153,14 @@ public class TestDownLoadImg {
         }
         inStream.close();
         return outStream.toByteArray();
+    }
+
+    @Test
+    public void test3() throws InterruptedException {
+        Date one = new Date();
+        Thread.sleep(2000L);
+        Date now = new Date();
+        System.out.println(now.before(one));
     }
 
 }
